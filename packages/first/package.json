@@ -6,7 +6,8 @@
   "author": "song",
   "license": "MIT",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "build": "vite build"
   },
   "volta": {
     "node": "18.0.0"

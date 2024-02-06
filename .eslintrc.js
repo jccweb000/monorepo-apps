@@ -31,6 +31,7 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "@typescript-eslint/no-var-requires": 0
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-explicit-any": 1
     }
 }

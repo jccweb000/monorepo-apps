@@ -2,34 +2,22 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+import * as Common from './common';
+
 module.exports = {
   entry: path.resolve(__dirname, '../main.tsx'),
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
+    publicPath: '/'
   },
   mode: 'development',
   devtool: 'inline-source-map',
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
-        },
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(ts|tsx)$/,
-        use: [
-          'ts-loader',
-        ],
-        exclude: /node_modules/,
-      },
+      Common.createLessRule(),
+      Common.createTsRule(),
+      Common.createJsxRule(),
     ]
   },
   plugins: [
@@ -42,12 +30,13 @@ module.exports = {
     port: 8088,
     hot: true,
     open: true,
+    historyApiFallback: true
   },
   target: 'web',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.less'],
     alias: {
-      '@': '../src'
+      '@': path.resolve(__dirname, '../src'),
     },
   }
 }

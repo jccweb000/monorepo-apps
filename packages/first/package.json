@@ -1,0 +1,17 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "first project",
+  "main": "index.js",
+  "author": "song",
+  "license": "MIT",
+  "scripts": {
+    "start": "vite"
+  },
+  "volta": {
+    "node": "18.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.2.1"
+  }
+}

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const WebpackBar = require('webpackbar');
 
 import * as Common from './common';
 
@@ -18,13 +19,15 @@ module.exports = {
       Common.createLessRule(),
       Common.createTsRule(),
       Common.createJsxRule(),
+      Common.createAssetsRule(),
     ]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html')
-    })
+    }),
+    new WebpackBar(),
   ],
   devServer: {
     port: 8088,

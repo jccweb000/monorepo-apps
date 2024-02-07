@@ -7,10 +7,11 @@ import { useRoutes } from '@/hooks/useRoutes';
 import { generateSubpaths } from '@/help';
 import { HomeRouter } from '@/pages/home/router';
 import { SettingRouter } from '@/pages/setting/router';
+import { Header } from './header';
 
 import './style.less';
 
-const { Sider, Content, Header } = Layout;
+const { Sider, Content } = Layout;
 
 export default function AppLayout () {
   const { menuItems } = useRoutes(routes);
@@ -57,7 +58,7 @@ export default function AppLayout () {
           width: '100vw',
         }}
       >
-          <Header style={{ backgroundColor: '#fff' }}>Header</Header>
+          <Header />
           <Layout
           >
             <Sider theme='light'>
@@ -72,11 +73,11 @@ export default function AppLayout () {
             </Sider>
             <Suspense >
               <Content className='Page-content'>
-                  <Routes>
-                    <Route path='home/*' element={<HomeRouter />} />
-                    <Route path='setting/*' element={<SettingRouter />} />
-                    <Route path='*' element={<div>404</div>} />
-                  </Routes>
+                <Routes>
+                  <Route path='home/*' element={<HomeRouter />} />
+                  <Route path='setting/*' element={<SettingRouter />} />
+                  <Route path='*' element={<div>404</div>} />
+                </Routes>
               </Content>
             </Suspense>
           </Layout>

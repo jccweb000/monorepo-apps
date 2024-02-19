@@ -14,7 +14,13 @@
     "start:twice": "cd packages/twice && npm run start",
     "install:all": "npm install && cd packages/first && npm install && cd ../twice && npm install",
     "eslint": "eslint --ext .ts,.tsx,.js,.jsx --fix --ignore-path .gitignore node_modules/",
-    "prettier": "prettier --write /packages/**/*.{ts,tsx,js,jsx}"
+    "prettier": "prettier --write /packages/**/*.{ts,tsx,js,jsx}",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "packages/*/src/**/*.{js,json,ts,tsx,jsx}": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.0",
@@ -27,8 +33,10 @@
     "css-loader": "^6.10.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
+    "husky": "^9.0.11",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

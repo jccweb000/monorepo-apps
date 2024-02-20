@@ -1,4 +1,4 @@
-import { LoadableComponent } from "@loadable/component";
+import { LoadableComponent } from '@loadable/component';
 
 export interface RouteItem {
   key: string;

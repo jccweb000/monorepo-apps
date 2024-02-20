@@ -6,8 +6,7 @@ const SettingOne = loadable(() => import(`../setting-one`));
 const SettingTwo = loadable(() => import(`../setting-two`));
 const Index = loadable(() => import(`./index`));
 
-export function SettingRouter () {
-
+export function SettingRouter() {
   return (
     <Routes>
       <Route path="" element={<Index />} />
@@ -15,6 +14,5 @@ export function SettingRouter () {
       <Route path="two" element={<SettingTwo />} />
       <Route path="*" element={<div>404</div>} />
     </Routes>
-  )
-
+  );
 }

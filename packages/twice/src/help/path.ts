@@ -4,10 +4,9 @@ export function generateSubpaths(path: string): string[] {
 
   let currentPath = '';
   for (let i = 0; i < segments.length; i++) {
-      currentPath += '/' + segments[i];
-      result.push(currentPath);
+    currentPath += '/' + segments[i];
+    result.push(currentPath);
   }
 
   return result;
-
 }

@@ -14,7 +14,7 @@ export const HomeRouter = () => {
       <Route path="detail" element={<HomeDetail />} />
       <Route path="*" element={<MissingPage />} />
     </Routes>
-  )
-}
+  );
+};
 
 export default HomeRouter;

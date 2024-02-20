@@ -3,5 +3,5 @@
  */
 export enum Envs {
   'DEV' = 'development',
-  'PROD' = 'production'
+  'PROD' = 'production',
 }

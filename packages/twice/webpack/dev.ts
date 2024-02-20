@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
 import * as Common from './common';
@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: '/',
   },
   mode: 'development',
   devtool: 'inline-source-map',
@@ -20,12 +20,12 @@ module.exports = {
       Common.createTsRule(),
       Common.createJsxRule(),
       Common.createAssetsRule(),
-    ]
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../index.html')
+      template: path.resolve(__dirname, '../index.html'),
     }),
     new WebpackBar(),
   ],
@@ -33,7 +33,7 @@ module.exports = {
     port: 8088,
     hot: true,
     open: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   target: 'web',
   resolve: {
@@ -41,5 +41,5 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src'),
     },
-  }
-}
+  },
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SettingTwo = () => {
-  return <div>SettingTwo</div>
+  return <div>SettingTwo</div>;
 };
 
 export default SettingTwo;

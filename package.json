@@ -10,10 +10,13 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "node ./scripts/start.js",
     "start:first": "cd packages/first && vite",
     "start:twice": "cd packages/twice && npm run start",
-    "install:all": "npm install && cd packages/first && npm install && cd ../twice && npm install",
-    "eslint": "eslint --ext .ts,.tsx,.js,.jsx --fix --ignore-path .gitignore node_modules/",
+    "build:first": "cd packages/first && npm run build",
+    "build:twice": "cd packages/twice && npm run build",
+    "install:all": "yarn install && cd packages/first && yarn install && cd ../twice && yarn install",
+    "eslint": "eslint --ext .ts,.tsx,.js,.jsx --fix --ignore-path .gitignore",
     "prettier": "prettier --write /packages/**/*.{ts,tsx,js,jsx}",
     "prepare": "husky"
   },
@@ -46,8 +49,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
     "style-loader": "^3.3.4",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.12"
+    "typescript": "^5.3.3"
   },
   "volta": {
     "node": "18.12.0"

@@ -1,6 +1,7 @@
 # 多应用仓库
 
 **node版本要求 >= 18.12.0** 建议使用volta进行node版本的控制
+**仓库使用yarn进行包的依赖管理，安装请使用yarn！**
 
 - 项目结构
 
@@ -27,7 +28,7 @@ monorepo
 └─ yarn.lock
 ```
 
-- 子应用在packages目录下，例如该项目包含三个子应用-common、first、twice
+- 子应用在packages目录下，例如该项目包含三个应用-common、first、twice
 
 ```
 该项目使用yarn进行包的依赖管理，当某个应用单独需要某个包，建议安装在当前的项目中，否则使用 yarn add @yourNeed -W 去安装在仓库的最外层。

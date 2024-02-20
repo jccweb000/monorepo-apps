@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProductOutlined } from '@ant-design/icons';
 import loadable from '@loadable/component';
+import { Table } from 'antd';
 
 import { RouteItem } from '@/types';
 
@@ -42,7 +43,7 @@ export const routes: RouteItem[] = [
         icon: <ProductOutlined />,
         name: '子页面2',
         key: 'setting-two',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];

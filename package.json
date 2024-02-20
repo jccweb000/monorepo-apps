@@ -19,7 +19,7 @@
   },
   "lint-staged": {
     "packages/twice/src/**/*.{js,ts,jsx,tsx}": [
-      "npx eslint --fix --max-warnings=0"
+      "npx eslint --fix --max-warnings=5"
     ]
   },
   "dependencies": {

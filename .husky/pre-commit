@@ -1,4 +1,22 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-npx --no-install lint-staged
+# 获取当前分支名称
+current_branch=$(git symbolic-ref --short HEAD)
+echo "$current_branch"
+
+# 定义分支命名规则的正则表达式
+branch_regex="^((chore|docs|feat|fix|perf|refactor|revert|style|test|hotfix|release)\/[a-z0-9_-]+|develop|release)$"
+
+# 检查当前分支名称是否符合规范
+if ! echo "$current_branch" | grep -E "$branch_regex" > /dev/null; then
+  echo "🚨: 无效的 Git 分支名!"
+  echo "分支名必须遵循该模式: ^((chore|docs|feat|fix|perf|refactor|revert|style|test|hotfix|release)\/[a-z0-9_-]+|develop|release)$"
+  exit 1
+fi
+
+echo "校验 Git 分支名 ✅"
+
+FORCE_COLOR=1 npx lint-staged
+
+echo "pre-commit lint-staged ✅"

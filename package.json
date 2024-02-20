@@ -18,12 +18,14 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "packages/*/src/**/*.{js,json,ts,tsx,jsx}": [
-      "eslint --fix"
+    "packages/twice/src/**/*.{js,ts,jsx,tsx}": [
+      "npx eslint --fix --max-warnings=0"
     ]
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.0",
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.2",
     "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",
     "@types/react-router-dom": "^5.3.3",
@@ -32,6 +34,8 @@
     "antd": "^5.14.0",
     "css-loader": "^6.10.0",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.33.2",
     "husky": "^9.0.11",
     "less": "^4.2.0",

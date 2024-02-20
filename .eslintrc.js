@@ -10,17 +10,17 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:prettier/recommended', // 防止与prettier冲突
   ],
-  // overrides: [
-  //   {
-  //     env: {
-  //       node: true,
-  //     },
-  //     files: ['.eslintrc.{js,cjs}'],
-  //     parserOptions: {
-  //       sourceType: 'script',
-  //     },
-  //   },
-  // ],
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: ['.eslintrc.{js,cjs}'],
+      parserOptions: {
+        sourceType: 'module',
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',

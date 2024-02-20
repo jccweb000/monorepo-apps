@@ -19,4 +19,4 @@ echo "校验 Git 分支名 ✅"
 
 FORCE_COLOR=1 npx lint-staged
 
-echo "pre-commit lint-staged ✅"
+echo "校验暂存区域文件内容 lint-staged ✅"

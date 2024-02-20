@@ -1,7 +1,6 @@
 import React from 'react';
 import { ProductOutlined } from '@ant-design/icons';
 import loadable from '@loadable/component';
-import { Table } from 'antd';
 
 import { RouteItem } from '@/types';
 

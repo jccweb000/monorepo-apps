@@ -42,7 +42,7 @@ export const routes: RouteItem[] = [
         icon: <ProductOutlined />,
         name: '子页面2',
         key: 'setting-two',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];

@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'prettier',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
@@ -16,7 +17,7 @@ module.exports = {
       },
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: 'script',
+        sourceType: 'module',
       },
     },
   ],
@@ -29,5 +30,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/no-explicit-any': 1,
+    '@typescript-eslint/no-unused-vars': 1,
   },
 };

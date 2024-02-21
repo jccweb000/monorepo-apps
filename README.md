@@ -28,16 +28,18 @@ monorepo
 └─ yarn.lock
 ```
 
-- 子应用在packages目录下，例如该项目包含三个应用-common、first、twice
+- 所有应用在packages目录下，该仓库包含三个应用的代码 —— common、first、twice
 
 ```
-该项目使用yarn进行包的依赖管理，当某个应用单独需要某个包，建议安装在当前的项目中，否则使用 yarn add @yourNeed -W 去安装在仓库的最外层。
+该项目使用yarn进行包的依赖管理，当某个应用单独需要某个包，建议安装在当前的项目中
+否则使用 yarn add @yourNeed -W 去安装在仓库的最外层。
 ```
 
 - 该仓库集成了eslint、prettier
 
 ```
-仓库中的代码在onSave的时候会自动触发prettier的规则，以及eslint的相关校验，更多rules配置请参考eslint官网
+仓库中的代码在onSave的时候会自动触发prettier的规则，以及eslint的相关校验；
+更多rules配置请参考eslint官网
 建议安装vsCode相关插件 Prettier-Code 、 Eslint，以便有更好的开发体验
 ```
 
@@ -59,8 +61,8 @@ commit主体必须以下列枚举值开头，否则校验不通过
 ]
 ```
 
-在触发husky的pre-commit勾子的时候将执行lint-stage,仅对暂存区的代码进行lint
-如下，当waring大于3时，eslint也会抛出非0值，将校验失败，不允许提交
+在触发husky的pre-commit勾子的时候将执行lint-staged,仅对暂存区的代码进行lint
+当waring大于3时，eslint也会抛出非0值，将校验失败，不允许提交
 
 ```
 "lint-staged": {

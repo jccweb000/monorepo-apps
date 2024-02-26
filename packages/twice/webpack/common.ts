@@ -10,7 +10,7 @@ export const resolve = {
   alias: {
     '@': path.resolve(__dirname, '../src'),
   },
-}
+};
 
 // tip：这是webpack的公共loader配置，后续如果需要根据环境变量进行配置，可以在这里create中添加入参进行配置
 
@@ -23,10 +23,10 @@ export const createTsRule = () => {
     use: 'ts-loader',
     exclude: /node_modules/,
   };
-}
+};
 
 /**
-  * 处理jsx|js文件
+ * 处理jsx|js文件
  */
 export const createJsxRule = () => {
   return {
@@ -36,11 +36,12 @@ export const createJsxRule = () => {
       options: {
         presets: ['@babel/preset-env'],
         plugins: ['@babel/plugin-transform-runtime'],
+        sourceMaps: true,
       },
     },
     exclude: /node_modules/,
-  }
-}
+  };
+};
 
 /**
  * 处理less文件
@@ -53,8 +54,8 @@ export const createLessRule = (env?: Envs) => {
       'css-loader',
       'less-loader',
     ],
-  }
-}
+  };
+};
 
 /**
  * 处理资源类型文件
@@ -72,5 +73,5 @@ export const createAssetsRule = () => {
         },
       },
     ],
-  }
-}
+  };
+};

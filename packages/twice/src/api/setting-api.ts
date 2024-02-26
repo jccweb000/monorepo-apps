@@ -1,6 +1,4 @@
-import { AxiosResponse } from 'axios';
-
-import Request, { get } from '@/serve/fetch';
+import { get } from '@/serve/fetch';
 
 export enum SellStatus {
   'solid' = 'solid',

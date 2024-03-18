@@ -2,6 +2,15 @@ import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 
 import { settingOneStore, autoDispose } from './store';
+import {
+  Box,
+  Button,
+  AddTextBtn,
+  ColorWithOpen,
+  Item,
+  CustomBtn,
+  AnimationBox,
+} from './style';
 
 const SettingOne = () => {
   const {
@@ -13,6 +22,7 @@ const SettingOne = () => {
     changeText,
     text,
     changeOpen,
+    open,
   } = settingOneStore;
 
   useEffect(() => {
@@ -27,15 +37,21 @@ const SettingOne = () => {
   }, [total]);
 
   return (
-    <div>
+    <Box>
       fetching: {fetching.toString()}
       <br />
-      data: {list && JSON.stringify(list)}
-      <div onClick={addItem}>add</div>
+      {list?.map((item) => {
+        return <Item key={item.id}>{item.name}</Item>;
+      })}
+      <Button onClick={addItem}>增加一个元素</Button>
       <span>total: {total}</span>
-      <div onClick={changeText}>changeText: {text}</div>
-      <div onClick={changeOpen}>changeOpen</div>
-    </div>
+      <AddTextBtn onClick={changeText}>changeText</AddTextBtn>
+      <div>{text}</div>
+      <AddTextBtn onClick={changeOpen}>changeOpen</AddTextBtn>
+      <ColorWithOpen open={open}>{open.toString()}</ColorWithOpen>
+      <CustomBtn color="green">自定义按钮</CustomBtn>
+      <AnimationBox>陈冠希</AnimationBox>
+    </Box>
   );
 };
 

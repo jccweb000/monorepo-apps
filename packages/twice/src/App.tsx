@@ -1,20 +1,19 @@
 import React from 'react';
-import { ConfigProvider, ConfigProviderProps } from 'antd';
-// import enUS from 'antd/locale/en_US';
+import { ConfigProvider } from 'antd';
+import enUS from 'antd/locale/en_US';
 import zhCN from 'antd/locale/zh_CN';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+
 import AppLayout from './layout';
+import { i18nStore } from './i18n';
 
-type Locale = ConfigProviderProps['locale'];
-
-export const App = () => {
-  const [locale] = React.useState<Locale>(zhCN);
-
+export const App = observer(() => {
   return (
-    <ConfigProvider locale={locale}>
+    <ConfigProvider locale={i18nStore.currentLang === 'zh-CN' ? zhCN : enUS}>
       <Router>
         <AppLayout />
       </Router>
     </ConfigProvider>
   );
-};
+});

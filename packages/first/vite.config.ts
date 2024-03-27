@@ -7,6 +7,12 @@ export default defineConfig({
     port: 3001,
     open: true, // 打开浏览器
     hmr: true, // 开启热更新
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
   },
   resolve: {
     alias: {

@@ -19,4 +19,28 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1024,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id
+              .toString()
+              .split('node_modules/')[1]
+              .split('/')[0]
+              .toString();
+          }
+        },
+        entryFileNames: '[name].[hash].js',
+        assetFileNames: ({ name }) => {
+          if (name && /\.png|\.jpg|\.jpeg|\.gif|\.svg$/.test(name)) {
+            return 'images/[name].[hash].[ext]';
+          }
+          return '[ext]/[name].[hash].[ext]';
+        },
+        chunkFileNames: 'js/[name].[hash].js',
+      },
+    },
+  },
 });
